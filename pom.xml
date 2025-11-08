@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.xxx</groupId>
+    <artifactId>blog</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <modules>
+        <module>blog-common</module>
+        <module>blog-pojo</module>
+        <module>blog-server</module>
+    </modules>
+
+    <!--父工程打pom包,删除src文件夹-->
+    <packaging>pom</packaging>
+
+    <parent>
+        <!--该maven工程管理着我们springboot相关的jar包和插件-->
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>2.7.6</version>
+    </parent>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <java.version>8</java.version>
+        <!--mybatis和springboot整合版本-->
+        <mybatis.version>2.3.1</mybatis.version>
+        <!--druid依赖版本-->
+        <druid.version>1.2.18</druid.version>
+        <!--pagehelper分页插件-->
+        <pagehelper.version>1.4.7</pagehelper.version>
+        <!--fastjson2依赖-->
+        <fastjson2.version>2.0.9</fastjson2.version>
+        <!--swagger依赖版本：注意SpringBoot2.6.X要用3.0的Swagger，SpringBoot2.5.x用2.0的Swagger-->
+        <swagger.version>3.0.0</swagger.version>
+        <!--hutool工具包依赖-->
+        <hutool.version>5.8.16</hutool.version>
+    </properties>
+
+    <dependencies>
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+        </dependency>
+
+        <!--swagger接口文档依赖-->
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-boot-starter</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <!--hutool工具包-->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+    </dependencies>
+</project>
